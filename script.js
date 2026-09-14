@@ -400,10 +400,10 @@ function renderSelectPlan() {
   document.querySelectorAll(".plan_card").forEach((card) => {
     card.addEventListener("click", function () {
       document.querySelectorAll(".plan_card").forEach((item) => {
-            item.classList.remove("selected");
-        });
+        item.classList.remove("selected");
+      });
 
-        this.classList.add("selected");
+      this.classList.add("selected");
       formData.plan = this.dataset.plan;
 
       renderStep();
@@ -484,16 +484,11 @@ function renderAddons() {
 
                         <span class="addon-check">
 
-                            ${
-                              selected
-                                ? `
-                                        <img
-                                            src="./images/icon-checkmark.svg"
-                                            alt="Selected"
-                                        >
-                                    `
-                                : ""
-                            }
+                          <input
+                            type="checkbox"
+                            ${selected ? "checked" : ""}
+                            aria-label="${addon.name}"
+                          >
 
                         </span>
 
@@ -548,23 +543,21 @@ function renderAddons() {
 
   document.querySelectorAll(".addon_card").forEach((card) => {
     card.addEventListener("click", function () {
-        const addonName = this.dataset.addon;
+      const addonName = this.dataset.addon;
 
-        if (formData.addons.includes(addonName)) {
-            formData.addons = formData.addons.filter((name) => name !== addonName);
+      if (formData.addons.includes(addonName)) {
+        formData.addons = formData.addons.filter((name) => name !== addonName);
 
-            this.classList.remove("selected");
-            this.querySelector(".addon-check").innerHTML = "";
-        } else {
-            formData.addons.push(addonName);
+        this.classList.remove("selected");
+        checkbox.checked = false;
+      } else {
+        formData.addons.push(addonName);
 
-            this.classList.add("selected");
-            this.querySelector(".addon-check").innerHTML = `
-                <img src="./images/icon-checkmark.svg" alt="Selected">
-            `;
-        }
+        this.classList.add("selected");
+        checkbox.checked = true;
+      }
     });
-});
+  });
 
   /* Back */
 
