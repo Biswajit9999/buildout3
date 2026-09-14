@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Multi-step Subscription Form</title>
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <main class="app">
+      <div class="card">
+        <!-- Sidebar -->
+        <nav class="sidebar" aria-label="Form steps">
+          <ol class="step-list" id="step-list">
+            <li class="step-item is-active" data-step="1">
+              <span class="step-circle">1</span>
+
+              <span class="step-text">
+                <small>Step 1</small>
+                Your Info
+              </span>
+            </li>
+
+            <li class="step-item" data-step="2">
+              <span class="step-circle">2</span>
+
+              <span class="step-text">
+                <small>Step 2</small>
+                Select Plan
+              </span>
+            </li>
+
+            <li class="step-item" data-step="3">
+              <span class="step-circle">3</span>
+
+              <span class="step-text">
+                <small>Step 3</small>
+                Add-ons
+              </span>
+            </li>
+
+            <li class="step-item" data-step="4">
+              <span class="step-circle">4</span>
+
+              <span class="step-text">
+                <small>Step 4</small>
+                Summary
+              </span>
+            </li>
+          </ol>
+        </nav>
+
+        <!-- Step Content -->
+        <section class="content" id="content"></section>
+      </div>
+    </main>
+
+    <footer class="attribution">
+      <p>
+        Multi-step subscription form &mdash; built with HTML, CSS &amp;
+        JavaScript.
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
