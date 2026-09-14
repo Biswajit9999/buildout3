@@ -544,6 +544,7 @@ function renderAddons() {
   document.querySelectorAll(".addon_card").forEach((card) => {
     card.addEventListener("click", function () {
       const addonName = this.dataset.addon;
+      const checkbox = this.querySelector('input[type="checkbox"]');
 
       if (formData.addons.includes(addonName)) {
         formData.addons = formData.addons.filter((name) => name !== addonName);
